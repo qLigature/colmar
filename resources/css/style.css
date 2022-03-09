@@ -1,0 +1,84 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+}
+
+:root {
+  --clr-bg-neutral-100: #fff;
+  --clr-bg-neutral-300: #f3f5f5;
+  --clr-bg-neutral-500: #eaebec;
+  --clr-bg-neutral-600: #d8d8d8;
+
+  --clr-ff-neutral-100: #fff;
+  --clr-ff-neutral-300: #9b9b9b;
+  --clr-ff-neutral-400: #767676;
+  --clr-ff-neutral-700: #4a4a4a;
+  --clr-ff-primary-300: #4a90e2;
+
+  --ff-logo: "Ubuntu", sans-serif;
+  --ff-body: "Avenir Next", sans-serif;
+  --ff-accent: "Arial", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-body);
+}
+
+.logo {
+  font-family: var(--ff-logo);
+}
+
+.font-accent {
+  font-family: var(--ff-accent);
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+.bg-lighter {
+  background-color: var(--clr-bg-neutral-100);
+}
+.bg-light {
+  background-color: var(--clr-bg-neutral-300);
+}
+.bg-semidark {
+  background-color: var(--clr-bg-neutral-500);
+}
+.bg-dark {
+  background-color: var(--clr-bg-neutral-600);
+}
+
+.desktop {
+  display: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.img-container {
+  overflow: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
