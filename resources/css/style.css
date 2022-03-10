@@ -123,7 +123,7 @@ video {
   display: block;
 }
 
-/* Navbar Section */
+/* Header */
 
 header {
   height: 64px;
@@ -192,3 +192,38 @@ ul {
 }
 
 /* Learn Section */
+
+.learn {
+  padding-bottom: 2rem;
+}
+
+.learn h2 {
+  font-size: 2rem;
+  padding: 2rem 0 1rem;
+}
+
+.learn-container {
+  margin: 0 1rem 0.5rem;
+}
+
+.learn-container h3 {
+  font-weight: 400;
+  padding: 1rem;
+}
+
+/* Thesis Section */
+
+.thesis {
+  padding-bottom: 1.5rem;
+}
+
+.thesis h2 {
+  font-size: 2rem;
+  padding: 2rem 0 1rem;
+}
+
+/* Footer */
+
+footer p {
+  padding: 1rem 1.5rem;
+}
