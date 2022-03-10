@@ -85,12 +85,34 @@ a {
   color: var(--clr-ff-neutral-700);
 }
 
+/* credits to: https://paulund.co.uk/css-animation-link-underline */
+a.underline-effect {
+  position: relative;
+}
+
+a.underline-effect::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+a.underline-effect:hover::before {
+  visibility: visible;
+  width: 100%;
+}
+
 button {
   background-color: var(--clr-ff-neutral-300);
   color: var(--clr-ff-neutral-100);
   font-family: var(--ff-body);
   display: block;
-  padding: 0.5rem;
+  padding: 1rem;
   border: 1px solid var(--clr-ff-neutral-300);
 }
 
@@ -105,6 +127,21 @@ button {
 
   .mobile {
     display: none;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  h3 {
+    font-family: 'Ubuntu';
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  p {
+    line-height: 1.5;
   }
 }
 
@@ -154,6 +191,7 @@ header {
   height: 4rem;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 nav {
@@ -172,6 +210,7 @@ nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #d8d8d8;
   }
 
   .logo {
@@ -180,6 +219,9 @@ nav ul {
     font-weight: 700;
     height: 2rem;
     padding-left: 1.5rem;
+  }
+
+  .logo a {
     display: flex;
     align-items: center;
   }
@@ -204,10 +246,6 @@ nav ul {
   padding: 2rem 1rem;
 }
 
-.banner-text h2 {
-  font-size: 2rem;
-}
-
 .banner-text h3 {
   font-weight: 400;
   margin-top: 2rem;
@@ -230,14 +268,27 @@ nav ul {
   }
 
   .banner-text {
+    width: 37%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-right: 1rem;
+  }
+
+  .banner-text h3 {
+    padding-right: 6rem;
   }
 
   .banner-text button {
+    font-size: 1.3rem;
+    background-color: var(--clr-ff-neutral-700);
     width: 70%;
+    transition: all 0.2s linear;
+  }
+
+  .banner-text button:hover {
+    background-color: var(--clr-ff-primary-300);
+    border: 1px solid var(--clr-ff-primary-300);
+    transition: all 0.2s linear;
   }
 }
 
@@ -277,6 +328,7 @@ nav ul {
   .info-left {
     width: 60%;
     padding: 2rem 1.5rem;
+    border-right: 1px solid var(--clr-bg-neutral-600);
   }
 
   .info-left h2 {
@@ -296,6 +348,12 @@ nav ul {
     padding: 1rem;
     display: flex;
     align-items: center;
+    transition: all 0.15s linear;
+  }
+
+  .info .info-container:hover {
+    background-color: var(--clr-bg-neutral-600);
+    transition: all 0.2s linear;
   }
 
   .info .info-container:first-child {
@@ -306,11 +364,20 @@ nav ul {
     width: 35%;
   }
 
-  .info-container .info-text{
+  .info-container .info-text {
     width: 65%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .info-container a::before {
+    background-color: var(--clr-ff-primary-300);
+  }
+
+  .info-container a.underline-effect:hover::before {
+    visibility: visible;
+    width: 26%;
   }
 }
 
@@ -321,7 +388,6 @@ nav ul {
 }
 
 .learn h2 {
-  font-size: 2rem;
   padding: 2rem 0 1rem;
 }
 
@@ -330,7 +396,6 @@ nav ul {
 }
 
 .learn-container h3 {
-  font-weight: 400;
   padding: 1rem;
 }
 
@@ -351,8 +416,24 @@ nav ul {
   .learn-container {
     display: flex;
     flex-direction: column;
-    padding-bottom: 1.5rem;
     margin: 0;
+    transition: all 0.3s linear;
+  }
+
+  .learn-container:hover {
+    background-color: #83acd8;
+    color: #fff !important;
+    transition: all 0.3s linear;
+  }
+
+  .learn-container:hover > * {
+    background-color: #83acd8;
+    color: #fff !important;
+    transition: all 0.3s linear;
+  }
+
+  .learn-container:not(hover) > * {
+    transition: all 0.3s linear;
   }
 
   .learn-container h3 {
@@ -364,8 +445,8 @@ nav ul {
     padding-top: 0.5rem;
   }
 
-  .learn-container h3 {
-    font-weight: 700;
+  .learn-container > :last-child {
+    padding-bottom: 1.5rem;
   }
 }
 
@@ -376,14 +457,13 @@ nav ul {
 }
 
 .thesis h2 {
-  font-size: 2rem;
   padding: 2rem 0 1rem;
 }
 
 @media (min-width: 50rem) {
   .thesis h2 {
     padding-bottom: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   .thesis-grid {
@@ -393,7 +473,7 @@ nav ul {
 
   .thesis-left {
     width: 60%;
-    padding: 0 1rem 2rem;
+    padding: 1rem 1rem 2rem;
     display: flex;
     flex-direction: column;
   }
@@ -415,13 +495,15 @@ nav ul {
     padding: 1rem;
     display: flex;
     align-items: center;
+    transition: all 0.2s linear;
   }
 
-  .thesis .info-container:first-child {
-    padding-top: 0;
+  .thesis .info-container:hover {
+    background-color: var(--clr-bg-neutral-600);
+    transition: all 0.2s linear;
   }
 
-  .thesis-text{
+  .thesis-text {
     width: 65%;
     margin-left: 1rem;
     display: flex;
