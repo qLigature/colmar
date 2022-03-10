@@ -1,6 +1,13 @@
 @font-face {
   font-family: "Avenir Next";
+  font-weight: 400;
   src: url("../fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: 700;
+  src: url("../fonts/AvenirNextLTPro-Bold.otf") format("opentype");
 }
 
 :root {
@@ -27,7 +34,49 @@
 }
 
 body {
+  color: var(--clr-ff-neutral-700);
   font-family: var(--ff-body);
+  font-size: 1rem;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  line-height: 1.3;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: var(--clr-ff-neutral-300);
+  color: var(--clr-ff-neutral-100);
+  font-family: var(--ff-body);
+  display: block;
+  padding: 0.5rem;
+  border: 1px solid var(--clr-ff-neutral-300);
+}
+
+.desktop {
+  display: none;
 }
 
 .logo {
@@ -38,38 +87,29 @@ body {
   font-family: var(--ff-accent);
 }
 
-body,
-h1,
-h2,
-h3,
-h4,
-p {
-  margin: 0;
+.text-center {
+  text-align: center;
 }
 
 .bg-lighter {
   background-color: var(--clr-bg-neutral-100);
 }
+
 .bg-light {
   background-color: var(--clr-bg-neutral-300);
 }
+
 .bg-semidark {
   background-color: var(--clr-bg-neutral-500);
 }
+
 .bg-dark {
   background-color: var(--clr-bg-neutral-600);
 }
 
-.desktop {
-  display: none;
-}
-
-li {
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
+.color-light,
+.learn-container p {
+  color: var(--clr-ff-neutral-400);
 }
 
 .img-container {
@@ -82,3 +122,73 @@ video {
   height: auto;
   display: block;
 }
+
+/* Navbar Section */
+
+header {
+  height: 64px;
+  position: sticky;
+  top: 0;
+}
+
+nav {
+  height: 100%;
+}
+
+ul {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Banner Section */
+
+.banner-text {
+  padding: 2rem 1rem;
+}
+
+.banner-text h2 {
+  font-size: 2rem;
+}
+
+.banner-text h3 {
+  font-weight: 400;
+  margin-top: 2rem;
+}
+
+.banner-text button {
+  font-size: 1rem;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+/* Info Section */
+
+.info-container {
+  margin: 1rem 1rem 2rem;
+}
+
+.info-container:not(:first-child) {
+  margin-top: 4rem;
+}
+
+.info-container:last-child {
+  margin-bottom: 0;
+  padding-bottom: 2rem;
+}
+
+.info-text {
+  margin: 1rem;
+}
+
+.info-text > *:not(:first-child) {
+  margin-top: 0.5rem;
+}
+
+.info-text a {
+  color: var(--clr-ff-primary-300);
+  display: block;
+}
+
+/* Learn Section */
