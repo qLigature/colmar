@@ -1,4 +1,22 @@
 @font-face {
+  font-family: "Ubuntu";
+  font-weight: 400;
+  src: url("../fonts/Ubuntu-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  font-weight: 500;
+  src: url("../fonts/Ubuntu-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  font-weight: 700;
+  src: url("../fonts/Ubuntu-Bold.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "Avenir Next";
   font-weight: 400;
   src: url("../fonts/AvenirNextLTPro-Regular.otf") format("opentype");
@@ -64,6 +82,7 @@ li {
 
 a {
   text-decoration: none;
+  color: var(--clr-ff-neutral-700);
 }
 
 button {
@@ -79,8 +98,14 @@ button {
   display: none;
 }
 
-.logo {
-  font-family: var(--ff-logo);
+@media (min-width: 50rem) {
+  .desktop {
+    display: initial;
+  }
+
+  .mobile {
+    display: none;
+  }
 }
 
 .font-accent {
@@ -126,7 +151,7 @@ video {
 /* Header */
 
 header {
-  height: 64px;
+  height: 4rem;
   position: sticky;
   top: 0;
 }
@@ -135,11 +160,42 @@ nav {
   height: 100%;
 }
 
-ul {
+nav ul {
   height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+@media (min-width: 50rem) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-family: var(--ff-logo);
+    font-size: 0.8rem;
+    font-weight: 700;
+    height: 2rem;
+    padding-left: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo span {
+    color: var(--clr-ff-neutral-300);
+    font-weight: 400;
+  }
+
+  nav {
+    padding-right: 1rem;
+  }
+
+  nav li:not(:last-child) {
+    padding-right: 1rem;
+  }
 }
 
 /* Banner Section */
@@ -161,6 +217,28 @@ ul {
   font-size: 1rem;
   width: 100%;
   margin-top: 1.5rem;
+}
+
+@media (min-width: 50rem) {
+  .banner {
+    display: flex;
+  }
+
+  .banner .img-container {
+    width: 60%;
+    margin: 2rem 1.5rem;
+  }
+
+  .banner-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 1rem;
+  }
+
+  .banner-text button {
+    width: 70%;
+  }
 }
 
 /* Info Section */
@@ -191,6 +269,51 @@ ul {
   display: block;
 }
 
+@media (min-width: 50rem) {
+  .info {
+    display: flex;
+  }
+
+  .info-left {
+    width: 60%;
+    padding: 2rem 1.5rem;
+  }
+
+  .info-left h2 {
+    margin-top: 2rem;
+  }
+
+  .info-left p {
+    margin-top: 1.5rem;
+  }
+
+  .info-right {
+    width: 40%;
+  }
+
+  .info .info-container {
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .info .info-container:first-child {
+    padding-top: 2rem;
+  }
+
+  .info-container .img-container {
+    width: 35%;
+  }
+
+  .info-container .info-text{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
 /* Learn Section */
 
 .learn {
@@ -211,6 +334,41 @@ ul {
   padding: 1rem;
 }
 
+@media (min-width: 50rem) {
+  .learn h2 {
+    padding-bottom: 2rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    margin-inline: 4rem;
+  }
+
+  .learn-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1.5rem;
+    margin: 0;
+  }
+
+  .learn-container h3 {
+    padding-bottom: 0;
+  }
+
+  .learn-container > p {
+    padding-inline: 1rem;
+    padding-top: 0.5rem;
+  }
+
+  .learn-container h3 {
+    font-weight: 700;
+  }
+}
+
 /* Thesis Section */
 
 .thesis {
@@ -222,8 +380,79 @@ ul {
   padding: 2rem 0 1rem;
 }
 
+@media (min-width: 50rem) {
+  .thesis h2 {
+    padding-bottom: 0;
+    margin-bottom: 2rem;
+  }
+
+  .thesis-grid {
+    display: flex;
+    margin-top: 2rem;
+  }
+
+  .thesis-left {
+    width: 60%;
+    padding: 0 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .thesis-left h3 {
+    margin-top: 2rem;
+  }
+
+  .thesis-left p {
+    margin-top: 0.5rem;
+  }
+
+  .thesis-right {
+    width: 40%;
+  }
+
+  .thesis .info-container {
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .thesis .info-container:first-child {
+    padding-top: 0;
+  }
+
+  .thesis-text{
+    width: 65%;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .thesis-text > :not(:first-child) {
+    margin-top: 0.5rem;
+  }
+}
+
 /* Footer */
 
 footer p {
   padding: 1rem 1.5rem;
+}
+
+@media (min-width: 50rem) {
+  footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  footer ul.desktop {
+    display: flex;
+    align-items: center;
+    margin-right: 1.5rem;
+  }
+
+  footer li:not(:last-child) {
+    padding-right: 1rem;
+  }
 }
